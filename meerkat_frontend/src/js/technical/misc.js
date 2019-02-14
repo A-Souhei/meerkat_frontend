@@ -391,6 +391,13 @@ function categorySummation(details) {
     if (details.exclude_variables) {
         api_call_url += '?excluded_variables=' + details.exclude_variables;
     }
+
+    // -------------------------- WHO MDG ----------------------------------------- 
+    api_call_url += '?excluded_variables=cmd_2';
+    // -------------------------- WHO MDG -----------------------------------------
+
+
+
     //Assemble an array of AJAX calls
     var deferreds = [
         $.getJSON(api_call_url, function(data) {
