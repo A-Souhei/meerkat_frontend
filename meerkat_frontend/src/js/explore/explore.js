@@ -46,9 +46,13 @@ function createCrossPlot(catx, caty, options, post_function) {
             queryData = data;
         }),
         $.getJSON(api_root + "/variables/" + catx, function(data) {
+             try{delete data.Cholera;}
+             catch(err){}
             catxData = data;
         }),
         $.getJSON(api_root + "/variables/" + caty, function(data) {
+             try{delete data.Cholera;}
+             catch(err){}
             catyData = data;
         })
     ];
